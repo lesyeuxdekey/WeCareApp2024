@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+    <div th:fragment="head">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <title>WeCare</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" th:href="@{/css/styles.css}" >
+    </div>
+    <div th:fragment="index_navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <div class="nav_logo">
+              </div>
+            <a class="navbar-brand" th:href="@{/}">WeCare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" th:href="@{/login}">Login</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Register</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                            <li><a class="dropdown-item" th:href="@{/register/n}">As a nanny</a></li>
+                            <li><a class="dropdown-item" th:href="@{/register/f}">As a family</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div th:fragment="navbar_sessionF" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand" th:href="@{/}">WeCare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" th:href="@{/f/profile}">My profile</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/}">My Bookings</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/}">Nannies</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div th:fragment="navbar_sessionN" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand" th:href="@{/loggedin}">WeCare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" th:href="@{/n/myprofile}">My profile</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/}">My Bookings</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/n/familyList}">Families</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div th:fragment="before_footer" class="py-5 bg-light">
+        <div class="container px-4 my-4">
+          <h2 class="display-6 fw-bolder mb-4 text-center">
+            Let's find the perfect match for you and work together!
+          </h2>
+        </div>
+    </div>
+
+    <div  th:fragment="footer" class="footer-container py-2 mt-auto">
+        <div class="container px-5">
+            <div class="text-center">
+                <div class="col-auto"><div class="small m-0 ">Copyright &copy; WeCare 2024</div></div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    </div>
+</html>

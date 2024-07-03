@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+  <head><div th:replace="~{layout :: head}"></div></head>
+  <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+        <nav><div th:replace="~{layout :: navbar_sessionF}"></div></nav>
+        <!-- List of nannies for the families-->
+         <!-- Page Content-->
+      <section class="py-5">
+        <div class="container px-5 my-5">
+          <div class="text-center mb-5"><h1 th:text="#{list.h1.f}" class="fw-bolder"></h1></div>
+          <div class="row gx-5">
+            <div th:each="nanny :${nannies}" class="col-lg-6">
+              <div class="position-relative mb-">
+                <img class="img-fluid rounded-3 mb-3" alt="..." th:src="${nanny.photoUrl}"/>
+                <a th:text="${nanny.name}" class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!"></a>
+                <p th:text="${nanny.age}+ ' years old'"></p>
+                <p th:text="${nanny.description}"></p>
+                <p th:text="'Price per hour: ' + ${nanny.serviceFee}"></p>
+                <!-- Campo oculto para el id_Nanny -->
+                <input type="hidden" th:value="${nanny.id}" name="id" id="id_${nanny.id}"/>
+              </div>
+              <a class="btn btn-primary" th:href="@{/n/{id}/profile(id=${nanny.id})}">View More</a>
+              <a class="btn btn-primary" th:href="@{/na/{id}/edit(id=${nanny.id})}">Edit</a>
+            </div>
+          </div>
+        </div>
+      </section>
+        <!--Before footer-->
+        <section th:replace="~{layout :: before_footer}"></section>
+        <!-- Footer-->
+        <footer><div th:replace="~{layout :: footer}"></div></footer>
+      </body>
+</html>

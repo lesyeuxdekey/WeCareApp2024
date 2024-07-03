@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+  <head><div th:replace="~{layout :: head}"></div></head>
+  <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav><div th:replace="~{layout :: navbar_sessionN}"></div></nav>
+        <!-- Index when logged in-->
+        <!-- Blog preview section-->
+<section class="py-5">
+    <div class="container px-5 my-5" th:object="${user}">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-4 col-xl-6">
+                <div class="text-center">
+                    <h2 th:text=#{index.user.title} class="fw-bolder"></h2>
+                    <p th:text=#{index.user.p} class="lead fw-normal text-muted mb-5"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5">
+                <div class="card h-100 shadow border-0">
+                    <img class="card-img-top" th:src="@{images/nanniesLoggedin.jpg}" alt="..." />
+                    <div class="card-body p-4 text-center">
+                        <a th:text=#{index.user.card1} class="text-decoration-none stretched-link fw-bolder" th:href="@{/n/familyList}"><h5 class="card-title mb-3"></h5></a>
+                        <p th:text=#{index.user.card1.p}  class="card-text mb-0"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-5">
+                <div class="card h-100 shadow border-0">
+                    <img class="card-img-top" th:src="@{images/nanniesLoggedin2.jpg}" alt="..." />
+                    <div class="card-body p-4 text-center">
+                        <a th:text=#{index.user.card2} class="text-decoration-none fw-bolder stretched-link" ><h5 class="card-title mb-3"></h5></a>
+                        <p th:text=#{index.user.card2.p} class="card-text mb-0"></p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4 mb-5" >
+                <div class="card h-100 shadow border-0">
+                    <img class="card-img-top" th:src="${user.photoUrl}"alt="..." />
+                    <div class="card-body p-4 text-center">
+                        <a th:text=#{index.user.card3} class="text-decoration-none fw-bolder stretched-link" th:href="@{/n/myprofile}"><h5 class="card-title mb-3"></h5></a>
+                        <p th:text=#{index.user.card3.p} class="card-text mb-0"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <!--Before footer-->
+        <section th:replace="~{layout :: before_footer}"></section>
+        <!-- Footer-->
+        <footer><div th:replace="~{layout :: footer}"></div></footer>
+      </body>
+</html>

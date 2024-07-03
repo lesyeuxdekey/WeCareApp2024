@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <div th:replace="~{layout :: head}"></div>
+  </head>    
+  <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav>
+              <div th:replace="~{layout :: index_navbar}"></div>
+            </nav>
+            <!--Login form-->
+    
+              <div class="d-flex justify-content-center  ">
+      
+                <div class="login-form">
+                  <form method="post"th:action="@{/register/n}" >
+                    <h1 th:text="#{register.titleN}" class="fw-bolder"></h1>
+
+                    <div class="form-row">
+                      <div class="form-group d-flex  gap-1 mb-2 ">
+                        <input type="username" class="form-control" id="username" name="username" placeholder="n:user"required>         
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group d-flex gap-1 mb-2">
+                        <input type="password" class="form-control" id="password" name="password"placeholder="Create secure password" required>
+                      </div>
+                    </div>
+      
+                    <div class="form-row">
+                      <div class="form-group d-flex gap-1 mb-2">
+                        <input type="email" class="form-control" id="email" name="email"placeholder="email" required>
+                      </div>
+
+                    </div>
+                      <div class="form-group d-flex gap-1 mb-2">
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Your full name" required>
+                    </div>
+
+                    <div class="form-group d-flex gap-1 mb-2">
+                      <input type="number" class="form-control"id="age" name="age"placeholder="Your age" required>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group d-flex gap-1 mb-2">
+                      <input type="text" class="form-control"id="address"  name="address"placeholder="Your address" required>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group d-flex gap-1 mb-2">
+                      <input type="text" class="form-control"id="city" name="city"placeholder="Your city"required>
+                    </div>
+                    <div class="form-group d-flex gap-1 mb-2">
+                      <input type="number" class="form-control"id="postalCode"  name="postalCode"placeholder="Your postal Code" required>
+                    </div>
+
+                    </div>
+                    <div class="form-group d-flex gap-1 mb-2">
+                      <input type="number" class="form-control"id="telephone" name="telephone"placeholder="Your postal telephone" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="number" class="form-control"id="yearsOfExperience"  name="yearsOfExperience"placeholder="Your years of experience" required>
+                    </div>
+                    <div class="form-group d-flex gap-1 mb-2">
+                      <input type="url" class="form-control"id="photoUrl" name="photoUrl"placeholder="Your photo url" required>
+                      
+                    </div>
+                    <div class="form-group d-flex gap-1 mb-2">
+                      <textarea class="form-control" id="description" name="description"placeholder="Tell us about you" rows="3" required></textarea>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                    <button th:text="#{register.btn}" th:href="@{/register/n}" type="submit" class="btn btn-primary "></button>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+        </main>
+        <!-- Footer-->
+        <footer><div th:replace="~{layout :: footer}"></div></footer>
+      </body>
+</html>

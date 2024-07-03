@@ -1,0 +1,15 @@
+2024-07-03 19:08:31.455145+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'We are a warm and welcoming family of four, living in a friendly neighborhood. ... (321)"; SQL statement:
+insert into family (address,city,description,email,name,numchildren,photourl,postalcode,servicefee,telephone,username,id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-224]
+2024-07-03 19:11:08.561041+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'My name is Keylin, and I am an experienced, dedicated, and loving nanny with ov... (264)"; SQL statement:
+insert into nanny (address,age,city,description,email,name,photourl,postalcode,servicefee,telephone,username,yearsofexperience,id) values (?,?,?,?,?,?,?,?,?,?,?,?,default) [22001-224]
+2024-07-03 19:15:41.291266+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'We are a warm and welcoming family of four, living in a friendly neighborhood. ... (321)"; SQL statement:
+insert into family (address,city,description,email,name,numchildren,photourl,postalcode,servicefee,telephone,username,id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-224]
+2024-07-03 21:22:26.549642+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'We are a warm and welcoming family of four, living in a friendly neighborhood... (367)"; SQL statement:
+insert into family (address,city,description,email,name,numchildren,photourl,postalcode,servicefee,telephone,username,id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-224]
+2024-07-03 21:36:35.618639+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'My name is [Your Name], and I am an experienced, dedicated, and loving nanny wi... (271)"; SQL statement:
+insert into nanny (address,age,city,description,email,name,photourl,postalcode,servicefee,telephone,username,yearsofexperience,id) values (?,?,?,?,?,?,?,?,?,?,?,?,default) [22001-224]
