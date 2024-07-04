@@ -50,14 +50,14 @@ public class NannyServiceImpl implements NannyService {
 
 	@Override
 	public Nanny updateNanny(Long id, Nanny updateNanny) {
-		System.out.println("Actualizando familia con ID: " + id);
+		log.info("Updating the family with ID: " + id);
 
 		Optional<Nanny> optionalNanny = nannyRepository.findById(id);
 
 		if (optionalNanny.isPresent()) {
 			Nanny existingNanny = optionalNanny.get();
 
-			System.out.println("Nanny found: " + existingNanny.toString());
+			log.info("Nanny found: " + existingNanny.toString());
 
 			// Update
 			existingNanny.setName(updateNanny.getName());

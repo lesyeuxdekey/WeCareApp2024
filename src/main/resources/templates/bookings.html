@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <div th:replace="~{layout :: head}"></div>
+  </head>
+  <body class="d-flex flex-column mh-100">
+    <main class="flex-shrink-0">
+      <!-- Navigation-->
+      <!-- Navbar for role 'N' -->
+      <div
+        sec:authorize="hasRole('ROLE_N')"
+        th:replace="~{layout :: navbar_sessionN}"
+      ></div>
+      <!-- Navbar for role 'F' -->
+      <div
+        sec:authorize="hasRole('ROLE_F')"
+        th:replace="~{layout :: navbar_sessionF}"
+      ></div>
+
+      <!--Page content-->
+      <div class="container d-flex flex-column text-center">
+        <h1 th:text="#{title.bookings}" class="m-3 fw-bolder"></h1>
+        <table class="table">
+          <thead class="fw-bolder">
+            <tr>
+              <th th:text="#{table.nanny}" scope="col">Nanny</th>
+              <th th:text="#{table.family}" scope="col">Family</th>
+              <th th:text="#{table.date}" scope="col">Date</th>
+              <th th:text="#{table.location}" scope="col">Location</th>
+              <th th:text="#{table.price}" scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="booking : ${booking}">
+              <td th:text="${booking.nanny.name}"></td>
+              <td th:text="${booking.family.name}"></td>
+              <td th:text="${booking.date}"></td>
+              <td th:text="${booking.location}"></td>
+              <td th:text="${booking.family.serviceFee}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Footer-->
+      <footer class="fixed-bottom">
+        <div th:replace="~{layout :: footer}"></div>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -44,12 +44,12 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
                 nannyDetails = userService.getNannyDetails(authentication.getName());
                 log.info("Nanny details" + nannyDetails.toString());
                 session.setAttribute("user", nannyDetails);
-                response.sendRedirect("/loggedin");
+                response.sendRedirect("/loggedinN");
             } else if ("f".equals(username.substring(0, 1))) {
                 familyDetails = userService.getFamilyDetails(authentication.getName());
                 log.info("Family details" + familyDetails.toString());
                 session.setAttribute("user", familyDetails);
-                response.sendRedirect("/f/nannyList");
+                response.sendRedirect("/loggedinF");
             } else {
                 response.sendRedirect("/logout");
             }

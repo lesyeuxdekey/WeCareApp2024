@@ -2,16 +2,16 @@
 <!DOCTYPE html>
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
     <head><div th:replace="~{layout :: head}"></div></head>
-    <body class="d-flex flex-column h-100">
+    <body class="d-flex flex-column mh-100 login-background">
+        <main class="flex-shrink-0">
 
         <!-- Navigation-->
         <nav><div th:replace="~{layout :: index_navbar}"></div></nav>
         <!-- Form for login -->
-        <main class="flex-shrink-0">
-        <div class="main">
+        <div class="main ">
             <div class="d-flex justify-content-center">
                 <img src="" alt="">
-                <div class="login-form">
+                <div class="login-form ">
                     <form  method="post"th:action="@{/login}">
                     <h1 class="fw-bolder text-center">Login:</h1>
                     
@@ -35,7 +35,7 @@
         </main>
       
         <!-- Footer-->
-        <footer><div th:replace="~{layout :: footer}"></div></footer>
+        <footer class="fixed-bottom"><div th:replace="~{layout :: footer}"></div></footer>
     </body>
 </html>
 

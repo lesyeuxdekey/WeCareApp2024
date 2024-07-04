@@ -31,7 +31,7 @@ public class Nanny {
 	private String postalCode;
 	private String address;
 	@Column(name = "servicefee")
-	private Float serviceFee;
+	private Double serviceFee;
 	private String description;
 	@Column(name = "yearsofexperience")
 	private int yearsOfExperience;

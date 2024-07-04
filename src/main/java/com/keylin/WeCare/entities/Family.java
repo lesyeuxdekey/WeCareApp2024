@@ -30,7 +30,7 @@ public class Family {
     private String postalCode;
     private String address;
     @Column(name = "servicefee")
-    private Float serviceFee;
+    private Double serviceFee;
     private String description;
     @Column(name = "numchildren")
     private int numChildren;

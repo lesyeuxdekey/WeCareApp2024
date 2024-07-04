@@ -16,4 +16,9 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
 
     @Query("SELECT b FROM Booking b WHERE b.family.id = :familyId")
     List<Booking> findByFamilyId(Long familyId);
+
+    // @Query(value = "INSERT INTO bookings (date, price, location, nannyid,
+    // familyid) VALUES (:, :authority)", nativeQuery = true)
+    // void insertAuthority(@Param("username") String username,
+    // @Param("authority") String authority);
 }

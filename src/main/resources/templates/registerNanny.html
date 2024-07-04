@@ -4,7 +4,7 @@
   <head>
     <div th:replace="~{layout :: head}"></div>
   </head>    
-  <body class="d-flex flex-column h-100">
+  <body class="d-flex flex-column mh-100 register-background">
         <main class="flex-shrink-0">
             <!-- Navigation-->
             <nav>
@@ -64,14 +64,16 @@
                     <div class="form-group">
                       <input type="number" class="form-control"id="yearsOfExperience"  name="yearsOfExperience"placeholder="Your years of experience" required>
                     </div>
+                    <div class="form-group">
+                      <input type="number" class="form-control"id="serviceFee"  name="serviceFee"placeholder="Nanny service fee per hour" required>
+                    </div>
                     <div class="form-group d-flex gap-1 mb-2">
-                      <input type="url" class="form-control"id="photoUrl" name="photoUrl"placeholder="Your photo url" required>
-                      
+                      <input type="url" class="form-control"id="photoUrl" name="photoUrl"placeholder="Your photo url" required>                     
                     </div>
                     <div class="form-group d-flex gap-1 mb-2">
                       <textarea class="form-control" id="description" name="description"placeholder="Tell us about you" rows="3" required></textarea>
                     </div>
-                    <div class="d-flex justify-content-center">
+                    <div class="d-flex justify-content-center mb-2">
                     <button th:text="#{register.btn}" th:href="@{/register/n}" type="submit" class="btn btn-primary "></button>
                   </div>
                   </form>
@@ -80,6 +82,6 @@
             </div>
         </main>
         <!-- Footer-->
-        <footer><div th:replace="~{layout :: footer}"></div></footer>
+        <footer class="fixed-bottom"><div th:replace="~{layout :: footer}"></div></footer>
       </body>
 </html>

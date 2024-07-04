@@ -29,6 +29,8 @@ public class EditProfileController {
     @Autowired
     private NannyService nannyService;
 
+    // Business logic
+
     // Get the edit profile model nanny/family
 
     @GetMapping("/n/edit")
@@ -61,7 +63,7 @@ public class EditProfileController {
             model.addAttribute("error", "Error while trying to edit your profile, please try again.");
             return "myProfile";
         }
-        return "indexLoggedIn";
+        return "myProfile";
     }
 
     // Edit the profile role n
@@ -80,6 +82,6 @@ public class EditProfileController {
             model.addAttribute("error", "Error while trying to edit your profile, please try again.");
             return "myProfile";
         }
-        return "indexLoggedIn";
+        return "myProfile";
     }
 }

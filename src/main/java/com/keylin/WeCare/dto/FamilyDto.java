@@ -19,7 +19,7 @@ public class FamilyDto {
     @NotEmpty(message = "This field should not be empty")
     private String postalCode;
     @NotEmpty(message = "This field should not be empty")
-    private Float serviceFee;
+    private Double serviceFee;
     @NotEmpty(message = "This field should not be empty")
     private String description;
     @NotEmpty(message = "This field should not be empty")
