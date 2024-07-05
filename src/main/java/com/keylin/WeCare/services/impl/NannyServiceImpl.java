@@ -37,20 +37,21 @@ public class NannyServiceImpl implements NannyService {
 	@Override
 	public Nanny findByNannyId(long nannyId) {
 		Nanny nanny = nannyRepository.findById(nannyId).get();
+		log.info("Finding all families and the map it to a dto");
 		return nanny;
 
 	}
 
 	@Override
 	public List<NannyDto> findAllNannies() {
-
 		List<Nanny> nannies = nannyRepository.findAll();
+		log.info("Finding a family by id");
 		return nannies.stream().map((Nanny) -> mapToNannyDto(Nanny)).collect(Collectors.toList());
 	}
 
 	@Override
 	public Nanny updateNanny(Long id, Nanny updateNanny) {
-		log.info("Updating the family with ID: " + id);
+		log.info("Updating the nanny with ID: " + id);
 
 		Optional<Nanny> optionalNanny = nannyRepository.findById(id);
 

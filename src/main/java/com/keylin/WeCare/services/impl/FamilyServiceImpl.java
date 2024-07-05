@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.keylin.WeCare.dto.FamilyDto;
@@ -16,29 +18,46 @@ import jakarta.persistence.EntityNotFoundException;
 @Service
 public class FamilyServiceImpl implements FamilyService {
 
+    // The loggers to give detailed info when running in console
+    Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
+
+    // Repositories needed
+
     private FamilyRepository familyRepository;
+
+    // Constructor
 
     public FamilyServiceImpl(FamilyRepository familyRepository) {
         super();
         this.familyRepository = familyRepository;
     }
 
+    // Business logic
+
+    // 1 service: get a list of all the objects of the entity nanny
+
     @Override
     public List<FamilyDto> findAllFamilies() {
         List<Family> families = familyRepository.findAll();
+        log.info("Finding all nannies and the map it to a dto");
         return families.stream().map((Family) -> mapToFamilyDto(Family)).collect(Collectors.toList());
     }
+
+    // 2 service: get a specific nanny
 
     @Override
     public Family findByFamilyId(long familyId) {
         Family family = familyRepository.findById(familyId).get();
+        log.info("Finding a nanny by id");
         return family;
 
     }
 
+    // update nanny when click on edit button on the user's profile
+
     @Override
     public Family updateFamily(Long id, Family updatedFamily) {
-        System.out.println("Actualizando familia con ID: " + id);
+        log.info("Updating the family with ID: " + id);
 
         Optional<Family> optionalFamily = familyRepository.findById(id);
 
@@ -62,7 +81,7 @@ public class FamilyServiceImpl implements FamilyService {
             // Save the family in the data base
             Family savedFamily = familyRepository.save(existingFamily);
 
-            System.out.println("Family updated: " + savedFamily.toString());
+            log.info("Family updated: " + savedFamily.toString());
 
             return savedFamily;
         } else {
@@ -71,6 +90,7 @@ public class FamilyServiceImpl implements FamilyService {
         }
     }
 
+    // mapping
     private FamilyDto mapToFamilyDto(Family family) {
         FamilyDto familyDto = FamilyDto.builder()
                 .id(family.getId())

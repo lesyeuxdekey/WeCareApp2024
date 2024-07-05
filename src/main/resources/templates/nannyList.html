@@ -22,7 +22,7 @@
                 <!-- Campo oculto para el id_Nanny -->
                 <input type="hidden" th:value="${nanny.id}" name="id" />
               </div>
-              <a th:href="@{/f/{id}/nprofile(id=${nanny.id})}" class="btn btn-primary mb-4">View More</a>
+              <a th:href="@{/f/{id}/nprofile(id=${nanny.id})}" class="btn btn-primary mb-4 mybtn">View More</a>
             </div>
 
           </div>
@@ -31,5 +31,7 @@
  
         <!-- Footer-->
         <footer class="fixed-bottom mt-2"><div th:replace="~{layout :: footer}"></div></footer>
+        <!--JS-->
+        <div th:replace="~{layout :: js}"></div>
       </body>
 </html>

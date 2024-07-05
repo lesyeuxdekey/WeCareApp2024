@@ -10,8 +10,7 @@
         <!-- Form for login -->
         <div class="main ">
             <div class="d-flex justify-content-center">
-                <img src="" alt="">
-                <div class="login-form ">
+                <div class="login-form p-xxl-5">
                     <form  method="post"th:action="@{/login}">
                     <h1 class="fw-bolder text-center">Login:</h1>
                     
@@ -36,6 +35,8 @@
       
         <!-- Footer-->
         <footer class="fixed-bottom"><div th:replace="~{layout :: footer}"></div></footer>
+        <!--JS-->
+        <div th:replace="~{layout :: js}"></div>
     </body>
 </html>
 

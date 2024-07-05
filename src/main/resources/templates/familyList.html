@@ -34,7 +34,7 @@
               <input type="hidden" th:value="${family.id}" name="id" />
               <a
                 th:href="@{/n/{id}/fprofile(id=${family.id})}"
-                class="btn btn-primary mb-4"
+                class="btn btn-primary mb-4 mybtn"
                 >View More</a
               >
             </div>
@@ -46,5 +46,7 @@
         <div th:replace="~{layout :: footer}"></div>
       </footer>
     </main>
+    <!--JS-->
+    <div th:replace="~{layout :: js}"></div>
   </body>
 </html>

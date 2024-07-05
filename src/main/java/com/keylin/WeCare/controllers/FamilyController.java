@@ -32,6 +32,7 @@ public class FamilyController {
     @GetMapping("/n/familyList")
     public String listfamilys(Model model) {
         List<FamilyDto> families = familyService.findAllFamilies();
+        log.info("Getting the list of families in the section");
         model.addAttribute("families", families);
         return "familyList";
     }
@@ -51,6 +52,7 @@ public class FamilyController {
     /* Go to the profile when click in the Family list */
     @GetMapping("/n/{id}/fprofile")
     public String showProfile(@PathVariable("id") Long id, Model model) {
+        log.info("Staring the process to show the profile of the family when click on View more:");
         Family family = familyService.findByFamilyId(id);
         model.addAttribute("family", family);
         return "profileFamily";

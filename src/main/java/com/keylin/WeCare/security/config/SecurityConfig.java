@@ -39,7 +39,8 @@ public class SecurityConfig {
                 .requestMatchers("/h2-ui/**").permitAll()
                 .requestMatchers("/register/**").permitAll()
                 .requestMatchers(HttpMethod.GET,
-                        "/login", "/loggedin", "/list", "profile", "/", "/css/**", "/img/**")
+                        "/login", "/loggedinN", "/loggedinF", "/logout", "/list", "/profile/", "/images/**", "/",
+                        "/css/**", "/img/**")
                 .permitAll()
                 .requestMatchers("/n/**").hasRole("N")
                 .requestMatchers("/f/**").hasRole("F")

@@ -34,6 +34,7 @@ public class NannyController {
     @GetMapping("/f/nannyList")
     public String listNannies(Model model) {
         List<NannyDto> nannies = nannyService.findAllNannies();
+        log.info("Getting the list of nannies in the section");
         model.addAttribute("nannies", nannies);
         return "nannyList";
     }
@@ -52,6 +53,7 @@ public class NannyController {
     /* Go to the profile when click in the nanny list */
     @GetMapping("/f/{id}/nprofile")
     public String showProfile(@PathVariable("id") Long id, Model model) {
+        log.info("Staring the process to show the profile of the nanny when click on View more:");
         Nanny nanny = nannyService.findByNannyId(id);
         model.addAttribute("nanny", nanny);
         return "profileNanny";

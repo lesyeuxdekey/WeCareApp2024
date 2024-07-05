@@ -36,13 +36,13 @@ public class EditProfileController {
     @GetMapping("/n/edit")
     public String getProfileN(Model model) {
         log.info("Accessing to the model to edit the profile");
-        return "myProfileModal";
+        return "myProfileModalN";
     }
 
     @GetMapping("/f/edit")
     public String getProfileF(Model model) {
         log.info("Accessing to the model to edit the profile");
-        return "myProfileModal";
+        return "myProfileModalF";
     }
 
     // Update
@@ -63,7 +63,7 @@ public class EditProfileController {
             model.addAttribute("error", "Error while trying to edit your profile, please try again.");
             return "myProfile";
         }
-        return "myProfile";
+        return "redirect:/f/myprofile";
     }
 
     // Edit the profile role n
@@ -82,6 +82,6 @@ public class EditProfileController {
             model.addAttribute("error", "Error while trying to edit your profile, please try again.");
             return "myProfile";
         }
-        return "myProfile";
+        return "redirect:/n/myprofile";
     }
 }

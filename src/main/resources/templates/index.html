@@ -7,21 +7,25 @@
   <body class="d-flex flex-column h-100 m-0 p-0 overflow-hidden myheader">
     <main class="flex-shrink-0">
       <!-- Navigation-->
-      <div th:replace="~{layout :: index_navbar}"></div>
+      <nav>
+        <div th:replace="~{layout :: index_navbar}"></div>
+      </nav>
       <!-- Header-->
       <header class="py-3">
         <div class="container px-4">
           <div class="row gx-5 align-items-center justify-content-center">
             <div class="col-md-4">
-              <div class="text-center text-xl-start">
-                <h1 class="display-5 fw-bolder text-white mb-2">
+              <div class="text-center text-xl-start my-header">
+                <h1 class="display-5 fw-bolder text-white mb-2 text-center">
                   To find the perfect match has never been so easy
                 </h1>
-                <p class="lead fw-normal text-secondary-50 mb-4">
+                <p
+                  class="lead fw-normal text-secondary-50 mb-4 text-center h1header"
+                >
                   I am looking for a...
                 </p>
                 <div
-                  class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start"
+                  class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-center"
                 >
                   <a
                     class="btn btn-primary btn-lg px-4 me-sm-3"
@@ -44,5 +48,7 @@
     <footer class="fixed-bottom">
       <div th:replace="~{layout :: footer}"></div>
     </footer>
+    <!--JS-->
+    <div th:replace="~{layout :: js}"></div>
   </body>
 </html>
