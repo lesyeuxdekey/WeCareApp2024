@@ -50,7 +50,14 @@ public class FamilyServiceImpl implements FamilyService {
         Family family = familyRepository.findById(familyId).get();
         log.info("Finding a nanny by id");
         return family;
+    }
 
+    // Service find families by the city written by user on the search bar
+    @Override
+    public List<FamilyDto> findFamiliesByCity(String city) {
+        List<Family> familyCity = familyRepository.findByCity(city);
+        log.info("Finding a list of Families based of the City ");
+        return familyCity.stream().map((Family) -> mapToFamilyDto(Family)).collect(Collectors.toList());
     }
 
     // update nanny when click on edit button on the user's profile

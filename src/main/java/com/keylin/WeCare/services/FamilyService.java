@@ -11,4 +11,7 @@ public interface FamilyService {
     Family findByFamilyId(long familyId);
 
     public Family updateFamily(Long id, Family updatedFamily);
+
+    public List<FamilyDto> findFamiliesByCity(String city);
+
 }

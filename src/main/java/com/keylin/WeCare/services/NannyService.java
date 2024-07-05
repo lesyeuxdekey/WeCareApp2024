@@ -11,4 +11,6 @@ public interface NannyService {
 	Nanny findByNannyId(long nannyId);
 
 	public Nanny updateNanny(Long id, Nanny updateNanny);
+
+	public List<NannyDto> findNanniesByCity(String city);
 }

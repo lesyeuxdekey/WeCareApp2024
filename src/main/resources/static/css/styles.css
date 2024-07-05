@@ -11229,10 +11229,9 @@ background: var(--bs-gradient);
 .h1header{
   color: var(--main-color);
 }
-.mybtn{
-  position: relative;
-  left: 28rem;
-  bottom: 3rem;
+.btnsearch{
+  padding: 0.5rem;
+  border-radius: 3rem;
 }
 @media (min-width: 768px) {
 .gradient-form {

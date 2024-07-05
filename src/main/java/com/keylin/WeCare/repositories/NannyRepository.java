@@ -1,5 +1,6 @@
 package com.keylin.WeCare.repositories;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,5 +15,8 @@ public interface NannyRepository extends JpaRepository<Nanny, Long> {
 
 	@Query("select n from Nanny n where n.username=:username")
 	public Nanny findByUsername(String username);
+
+	@Query("select n from Nanny n where n.city=:city")
+	public List<Nanny> findByCity(String city);
 
 }

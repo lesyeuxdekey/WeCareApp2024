@@ -42,6 +42,14 @@ public class NannyServiceImpl implements NannyService {
 
 	}
 
+	// Service find nannies by the city written by user on the search bar
+	@Override
+	public List<NannyDto> findNanniesByCity(String city) {
+		List<Nanny> nannyCity = nannyRepository.findByCity(city);
+		log.info("Finding a list of nannies based of the City ");
+		return nannyCity.stream().map((Nanny) -> mapToNannyDto(Nanny)).collect(Collectors.toList());
+	}
+
 	@Override
 	public List<NannyDto> findAllNannies() {
 		List<Nanny> nannies = nannyRepository.findAll();

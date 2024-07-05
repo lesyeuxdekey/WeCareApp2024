@@ -12,7 +12,25 @@
       <section class="py-5">
         <div class="container px-5 my-5">
           <div class="text-center mb-5">
-            <h1 class="fw-bolder">Families near you:</h1>
+            <h1 th:text="#{list.h1.f}" class="fw-bolder"></h1>
+            <div class="input-group d-flex align-content-center flex-column">
+              <form th:action="@{/n/searchFamilies}" method="get">
+                <input
+                  type="search"
+                  id="form1"
+                  name="city"
+                  class="form-control"
+                  placeholder="find by city"
+                />
+                <button
+                  type="submit"
+                  class="btn btn-primary btnsearch"
+                  data-mdb-ripple-init
+                >
+                  Search
+                </button>
+              </form>
+            </div>
           </div>
           <div class="row gx-5">
             <div th:each="family :${families}" class="col-lg-6">

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.keylin.WeCare.dto.NannyDto;
 import com.keylin.WeCare.entities.Nanny;
@@ -58,4 +59,15 @@ public class NannyController {
         model.addAttribute("nanny", nanny);
         return "profileNanny";
     }
+
+    // List of nannies by city
+    @GetMapping("/f/searchNannies")
+    public String getNanniesByCity(Model model, @RequestParam("city") String city) {
+        List<NannyDto> nannies = nannyService.findNanniesByCity(city);
+        log.info("Getting the list of nannies in the city of " + nannies);
+        model.addAttribute("nannies", nannies);
+        model.addAttribute("city", city);
+        return "nannyList";
+    }
+
 }
